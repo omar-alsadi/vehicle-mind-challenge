@@ -1,0 +1,153 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+}
+
+.App {
+    padding: 3rem;
+    height: 100vh;
+}
+
+.hero-nav {
+    background-color: #F3F6FA;
+    color: #3C64B1;
+    padding: 1.5rem 2rem;
+    font-weight: 500;
+    margin-bottom: 5rem;
+}
+
+.hero-nav span {
+    margin-left: 3.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.btn {
+    background-color: #2958E5;
+    padding: .5rem 5rem;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    color: #2958E5;
+    border: 1px solid #2958E5;
+    background-color: transparent;
+}
+
+.btn-submit {
+    background-color: #fff;
+    padding: .5rem 5rem;
+    color: #2958E5;
+    border: 2px solid #2958E5;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 2rem 10rem;
+    transition: all .3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #2958E5;
+    color: #fff;
+}
+
+.form-container {
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    margin: 3rem 0;
+}
+
+form {
+    color: #2D4CE1;
+    width: 300px;
+}
+
+input {
+    width: 100%;
+    border: none;
+    background-color: #F3F6FA;
+    padding: 1rem 2rem;
+    margin: .5rem 0;
+    outline: none;
+    color: #2D4CE1;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+input::placeholder {
+    color: #2d4be136;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    padding: 0;
+    border: 2px solid #2D4CE1;
+    appearance: none;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.is-invalid {
+    border: 1px solid red;
+    color: red;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin: 2rem 0 ;
+}
+
+.checkbox__control {
+    position: absolute;
+    left: 13.5px;
+}
+
+.checkbox__control svg {
+    display: none;
+    width: .8em;
+    height: .8em;
+}
+
+input[type="checkbox"]:checked + .checkbox__control svg {
+    display: block;
+}

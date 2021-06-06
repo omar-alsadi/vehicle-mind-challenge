@@ -1,0 +1,47 @@
+<div class='form-container'>
+
+    <h2>Let's get you signed up</h2>
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <label>First Name </label>
+            <input id="firstName" type='text' name='firstName' placeholder="First Name" formControlName="firstName" [(ngModel)]="firstName"
+            (input)="inputValidator($event)" required/>
+   
+            <label>Last Name </label>
+            <input type='text' name='lastName' placeholder="Last Name" formControlName="lastName" [(ngModel)]="lastName"
+            (input)="inputValidator($event)" required />
+            <label >Birthday</label>
+            <input type='date' min='1914-01-01' max="{{ date | date:'yyyy-MM-dd'}}" name='birthday' formControlName="birthday"
+            [(ngModel)]="birthday" (input)="formattedDate($event)" required />
+            <label >Phone number </label>
+            <input type='text' name='phoneNumber' phoneMask formControlName="phoneNumber" [(ngModel)]="phoneNumber"
+            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+            (blur)="onlyNumberic()" maxlength="12" placeholder="514 XXXX-XXX" required />
+            <label >Email </label>
+            <input 
+            type='email' name='email' placeholder="Email" formControlName="email" [(ngModel)]="email" required />
+            <label class='checkbox-wrapper'>
+                <input type='checkbox' name='isMessageOnBirthday' formControlName="isMessageOnBirthday" [(ngModel)]="isMessageOnBirthday" />
+                <span class="checkbox__control">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                    >
+                    <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1.73 12.91l6.37 6.37L22.79 4.59"
+                    />
+                </svg>
+            </span>
+            Send message on birthday
+        </label>
+        <app-button className='btn-submit' text='Submit'
+         (onAddUser)="addUser($event)"
+         ></app-button>
+    </form>
+</div>
+
